@@ -1,0 +1,94 @@
+@(currentPage: TabPage, tabPages: List[TabPage])
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="google-site-verification" content="XfEIOj2EM0U2u4VG2DNWL46iKcLUzyUyEv_T0_xAPss" />
+    </head>
+
+    <header>
+
+        <title>@currentPage.getShowName()</title>
+
+        <link href="@routes.Assets.versioned("css/default_colors.css")" rel="stylesheet" />
+        <link href="@routes.Assets.versioned("css/main_style.css")" rel="stylesheet" />
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("dist/jquery.bxslider.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("font-awesome.min.css"))'>
+
+        <div class="navbar navbar-default navbar-static-top" id="top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@routes.Application.menu_id("home")"><span>Juraj</span> Kabzan</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    @for(p <- tabPages) {
+                        @if(p.getSubPages().size == 0) {
+                            <li><a href="@routes.Application.menu_id(p.getName())">@p.getShowName()</a></li>
+                        } else {
+                            <li class="dropdown ">
+                                <a data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">@p.getShowName() <b class=" icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                @for(s <- p.getSubPages()) {
+                                    <li><a href="@routes.Application.menu_id(s.getName())">@s.getShowName()</a></li>
+                                }
+                                </ul>
+                            </li>
+                        }
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @*<link rel="icon" type="image/png" href="@routes.Assets.versioned("images_sys/"+currentPage.getName()+".png")" />*@
+        <link rel="icon" type="image/png" href="@routes.Assets.versioned("/images_sys/tu.png")" />
+
+    </header>
+
+    <body>
+        @currentPage.getContentHtml()
+        <a href="#" class="back-to-top">Back to Top</a>
+    </body>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h4 class="widgetheading">Get in touch with me</h4>
+                        <address>
+                            <b>Juraj Kabzan</b><br>
+                            <b><i class="fa fa-home"></i></b> Schweiz, Zurich<br>
+                            <b><i class="fa fa-envelope"></i></b><a href="mailto:kabzanj@@gmail.com"> kabzanj&#064gmail.com</a><br>
+                            <b><i class="fa fa-phone"></i></b> 00421 917 111 219<br>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <!-- JavaScript -->
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("2.2.0/jquery.min.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("dist/js/bootstrap.min.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.bxslider.min.js"))'></script>
+
+    <script type="text/javascript" src="@routes.Assets.versioned("js/custom.js")"></script>
+
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
+</html>

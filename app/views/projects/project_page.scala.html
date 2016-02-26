@@ -1,0 +1,55 @@
+@(currentPage: ProjectPage)
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            @currentPage.getContentHtml()
+            <div class="row">
+                @if(currentPage.getGithub_link() != null) {
+                    <div class="col-sm-2 text-center">
+                        GitHub
+                        <a href="@currentPage.getGithub_link()" target="_blank">
+                            <i class="fa fa-github fa-5x"></i>
+                        </a>
+                    </div>
+                }
+                @if(currentPage.getUrl() != null) {
+                        <div class="col-sm-2 text-center">
+                        Document
+                        <a href="@routes.Application.menu_string(currentPage.getName())" target="_blank">
+                            <i class="fa fa-file-pdf-o fa-5x"></i>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+            <div class="row spacer">
+            @if(currentPage.getPictures().size != 0 && currentPage.getPictures().size > 1) {
+                    <!-- Slider -->
+                <ul class="bxslider">
+                @for(p <- currentPage.getPictures()) {
+                    <li>
+                        <img src="@routes.Application.imageAt("images_tab/" + currentPage.getName() + "/" + p)" alt="" />
+                    </li>
+                }
+                </ul>
+
+                    <!-- end slider -->
+            } else {
+                @if(currentPage.getPictures().size != 0) {
+                    <img src="@routes.Application.imageAt("images_tab/" + currentPage.getName() + "/" + currentPage.getPictures()(0))" alt="" />
+                }
+            }
+            </div>
+            <div class="row">
+            @if(currentPage.getVideo_url() != null) {
+                <div class="embed-container">
+                    <iframe class="embed-responsive-item" src=@currentPage.getVideo_url() frameborder="0" allowfullscreen></iframe>
+                </div>
+            }
+            </div>
+
+        </div>
+    </div>
+</div>
+

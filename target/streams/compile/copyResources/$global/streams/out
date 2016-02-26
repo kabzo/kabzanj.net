@@ -1,0 +1,5 @@
+[debug] Copy resource mappings: 
+[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/logback.xml,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/logback.xml)
+[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/routes,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/routes)
+[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/application.conf,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/application.conf)
+[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/application.conf~,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/application.conf~)

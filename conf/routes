@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.menu_id(pageKey: String ?= "home")
+GET     /menu/file                  controllers.Application.menu_string(str: String)
+GET     /sitemap.xml                  controllers.Assets.at(path="/public", file = "sitemap.xml")
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /images/*file               controllers.Application.imageAt(file:String)
+
+
+GET     /webjars/*file              controllers.WebJarAssets.at(file)
