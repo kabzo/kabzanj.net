@@ -93,7 +93,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="models.TabPage#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(name:String,subPages:java.util.List[models.SubPage]):models.TabPage"></a>
+      <a id="&lt;init&gt;(name:String,subPages:java.util.List[models.SubPage],metaTag:String):models.TabPage"></a>
       <a id="&lt;init&gt;:TabPage"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -101,10 +101,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">TabPage</span><span class="params">(<span name="name">name: <span class="extype" name="java.lang.String">String</span></span>, <span name="subPages">subPages: <span class="extype" name="java.util.List">List</span>[<a href="SubPage.html" class="extype" name="models.SubPage">SubPage</a>]</span>)</span>
+        <span class="name">TabPage</span><span class="params">(<span name="name">name: <span class="extype" name="java.lang.String">String</span></span>, <span name="subPages">subPages: <span class="extype" name="java.util.List">List</span>[<a href="SubPage.html" class="extype" name="models.SubPage">SubPage</a>]</span>, <span name="metaTag">metaTag: <span class="extype" name="java.lang.String">String</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#models.TabPage@&lt;init&gt;(name:String,subPages:java.util.List[models.SubPage]):models.TabPage" title="Permalink" target="_top">
+      <a href="../index.html#models.TabPage@&lt;init&gt;(name:String,subPages:java.util.List[models.SubPage],metaTag:String):models.TabPage" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -127,7 +127,7 @@
     </span>
       
     </li><li name="models.TabPage#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(name:String,contentHtml:play.twirl.api.Content):models.TabPage"></a>
+      <a id="&lt;init&gt;(name:String,contentHtml:play.twirl.api.Content,metaTag:String):models.TabPage"></a>
       <a id="&lt;init&gt;:TabPage"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -135,10 +135,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">TabPage</span><span class="params">(<span name="name">name: <span class="extype" name="java.lang.String">String</span></span>, <span name="contentHtml">contentHtml: <span class="extype" name="play.twirl.api.Content">Content</span></span>)</span>
+        <span class="name">TabPage</span><span class="params">(<span name="name">name: <span class="extype" name="java.lang.String">String</span></span>, <span name="contentHtml">contentHtml: <span class="extype" name="play.twirl.api.Content">Content</span></span>, <span name="metaTag">metaTag: <span class="extype" name="java.lang.String">String</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#models.TabPage@&lt;init&gt;(name:String,contentHtml:play.twirl.api.Content):models.TabPage" title="Permalink" target="_top">
+      <a href="../index.html#models.TabPage@&lt;init&gt;(name:String,contentHtml:play.twirl.api.Content,metaTag:String):models.TabPage" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -369,18 +369,18 @@
     </span>
       
     </li><li name="models.TabPage#getFinalPage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getFinalPage(tabPages:java.util.List[models.TabPage]):play.twirl.api.Content"></a>
-      <a id="getFinalPage(List[TabPage]):Content"></a>
+      <a id="getFinalPage(tabPages:java.util.List[models.TabPage],webJarAssets:controllers.WebJarAssets):play.twirl.api.Content"></a>
+      <a id="getFinalPage(List[TabPage],WebJarAssets):Content"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getFinalPage</span><span class="params">(<span name="tabPages">tabPages: <span class="extype" name="java.util.List">List</span>[<a href="" class="extype" name="models.TabPage">TabPage</a>]</span>)</span><span class="result">: <span class="extype" name="play.twirl.api.Content">Content</span></span>
+        <span class="name">getFinalPage</span><span class="params">(<span name="tabPages">tabPages: <span class="extype" name="java.util.List">List</span>[<a href="" class="extype" name="models.TabPage">TabPage</a>]</span>, <span name="webJarAssets">webJarAssets: <span class="extype" name="controllers.WebJarAssets">WebJarAssets</span></span>)</span><span class="result">: <span class="extype" name="play.twirl.api.Content">Content</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#models.TabPage@getFinalPage(tabPages:java.util.List[models.TabPage]):play.twirl.api.Content" title="Permalink" target="_top">
+      <a href="../index.html#models.TabPage@getFinalPage(tabPages:java.util.List[models.TabPage],webJarAssets:controllers.WebJarAssets):play.twirl.api.Content" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -398,6 +398,23 @@
       </span>
       </h4><span class="permalink">
       <a href="../index.html#models.TabPage@getId():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.TabPage#getMetaTag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getMetaTag():String"></a>
+      <a id="getMetaTag():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMetaTag</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.TabPage@getMetaTag():String" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>
@@ -619,6 +636,23 @@
       </span>
       </h4><span class="permalink">
       <a href="../index.html#models.TabPage@setId(id:Int):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="models.TabPage#setMetaTag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="setMetaTag(metaTag:String):Unit"></a>
+      <a id="setMetaTag(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setMetaTag</span><span class="params">(<span name="metaTag">metaTag: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#models.TabPage@setMetaTag(metaTag:String):Unit" title="Permalink" target="_top">
         <img src="../lib/permalink.png" />
       </a>
     </span>

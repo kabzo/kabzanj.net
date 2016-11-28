@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/routes
-// @DATE:Fri Feb 26 11:25:03 CET 2016
+// @SOURCE:/home/duri/workspace/web/www.kabzanj.net/conf/routes
+// @DATE:Mon Nov 28 11:44:26 CET 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:15
+  // @LINE:17
   class ReverseWebJarAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:17
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.WebJarAssets.at",
       """
@@ -35,7 +35,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:8
+  // @LINE:10
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +43,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:8
+    // @LINE:10
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -53,7 +53,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
+    // @LINE:13
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -78,22 +78,30 @@ package controllers.javascript {
       "controllers.Application.menu_id",
       """
         function(pageKey) {
-          return _wA({method:"GET", url:"""" + _prefix + """" + _qS([(pageKey == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("pageKey", pageKey))])})
+        
+          if (pageKey == """ + implicitly[JavascriptLiteral[String]].to("home") + """) {
+            return _wA({method:"GET", url:"""" + _prefix + """"})
+          }
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("pageKey", encodeURIComponent(pageKey))})
+          }
+        
         }
       """
     )
   
-    // @LINE:7
+    // @LINE:9
     def menu_string: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.menu_string",
       """
         function(str) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/file" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("str", str)])})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "file/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("str", encodeURIComponent(str))})
         }
       """
     )
   
-    // @LINE:12
+    // @LINE:14
     def imageAt: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.imageAt",
       """

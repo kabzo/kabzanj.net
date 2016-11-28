@@ -30,9 +30,12 @@ define( [
 	"./offset",
 	"./dimensions",
 	"./deprecated",
-	"./exports/amd"
+	"./exports/amd",
+	"./exports/global"
 ], function( jQuery ) {
 
-return ( window.jQuery = window.$ = jQuery );
+"use strict";
+
+return jQuery;
 
 } );

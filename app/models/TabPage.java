@@ -1,5 +1,6 @@
 package models;
 
+import controllers.WebJarAssets;
 import org.apache.commons.lang3.text.WordUtils;
 import play.twirl.api.Content;
 import views.html.main_page;
@@ -25,30 +26,30 @@ public class TabPage {
     private HashMap<String,String> scripts;
     private HashMap<String,String> styles;
 
+    private String metaTag;
+
     private boolean pace;
 
     public TabPage()
     {
         subPages = new ArrayList<SubPage>();
         this.pace = false;
-        this.id = PagesPool.currentId++;
     }
 
     public TabPage(String name){
         subPages = new ArrayList<SubPage>();
         this.name = name;
         this.pace = false;
-        this.id = PagesPool.currentId++;
 
 
     }
 
-    public TabPage(String name, Content contentHtml){
+    public TabPage(String name, Content contentHtml, String metaTag){
         subPages = new ArrayList<SubPage>();
         this.name = name;
         this.contentHtml = contentHtml;
         this.pace = false;
-        this.id = PagesPool.currentId++;
+        this.metaTag=metaTag;
     }
 
     public TabPage(String name, Content contentHtml, boolean pace){
@@ -59,7 +60,7 @@ public class TabPage {
         this.id = PagesPool.currentId++;
     }
 
-    public TabPage(String name, List<SubPage> subPages){
+    public TabPage(String name, List<SubPage> subPages, String metaTag){
         this.id = PagesPool.currentId++;
         this.name = name;
         List<String> subPagesNames = new ArrayList<String>();
@@ -68,6 +69,7 @@ public class TabPage {
         }
         this.subPages = subPages;
         this.pace = false;
+        this.metaTag=metaTag;
 
     }
 
@@ -92,8 +94,8 @@ public class TabPage {
         return contentHtml;
     }
 
-    public Content getFinalPage(List<TabPage> tabPages){
-        return main_page.render(this,tabPages);
+    public Content getFinalPage(List<TabPage> tabPages, WebJarAssets webJarAssets){
+        return main_page.render(this,tabPages,webJarAssets);
     }
 
     public void setContentHtml(Content contentHtml) {
@@ -134,5 +136,13 @@ public class TabPage {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getMetaTag() {
+        return metaTag;
+    }
+
+    public void setMetaTag(String metaTag) {
+        this.metaTag = metaTag;
     }
 }

@@ -30,7 +30,7 @@ class nxtuino extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,For
 
 
 Seq[Any](format.raw/*1.1*/("""<p>
-<h1>Balancing two Wheel Vehicke</h1>
+<h1>Balancing two Wheel Vehicle</h1>
 The first project I have created is the vehicle consisting of two motors and wheels which was able to balance
 on them as the commercially known Segway does.
 </p>
@@ -78,9 +78,9 @@ As you might see in the video, the results are satisfiable but there are still m
 object nxtuino extends nxtuino_Scope0.nxtuino
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 26 13:04:21 CET 2016
-                  SOURCE: /home/duri/workspace/web/jurajkabzan_personalwebpage/app/views/projects/nxtuino.scala.html
-                  HASH: de0a8f117cbe0417619e40c1d34ba5c28d2f4260
+                  DATE: Mon Nov 28 11:44:27 CET 2016
+                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/projects/nxtuino.scala.html
+                  HASH: 21677e604562be03f724c970aac4c241856e2117
                   MATRIX: 840->0
                   LINES: 32->1
                   -- GENERATED --

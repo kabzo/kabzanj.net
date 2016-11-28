@@ -19,11 +19,19 @@ import java.io.FileNotFoundException;
 
 public class Application extends Controller {
 
+
+    @Inject WebJarAssets webJarAssets;
+
+
     @Inject CacheApi cache;
     private PagesPool getPool(){
         PagesPool pool = new PagesPool();
         return pool;
 
+    }
+
+    public Result index(){
+        return menu_id("home");
     }
 
     public Result menu_id(String pageKey){
@@ -32,11 +40,11 @@ public class Application extends Controller {
         for(TabPage t: pool.bar){
             for(SubPage s:t.getSubPages()){
                 if(s.getName().equals(pageKey)){
-                    return ok(s.getFinalPage(pool.bar));
+                    return ok(s.getFinalPage(pool.bar,webJarAssets));
                 }
             }
             if(t.getName().equals(pageKey)){
-                return ok(t.getFinalPage(pool.bar));
+                return ok(t.getFinalPage(pool.bar,webJarAssets));
             }
         }
 

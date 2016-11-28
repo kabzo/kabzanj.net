@@ -1,4 +1,4 @@
-name := """jurajkabzan_personalwebpage"""
+name := """www.kabzanj.net"""
 
 version := "1.0-SNAPSHOT"
 
@@ -12,14 +12,12 @@ libraryDependencies ++= Seq(
   javaWs
 )
 libraryDependencies ++= Seq(
-  "org.webjars" %% "webjars-play" % "2.4.0-1",
-  "org.webjars.bower" % "bootstrap" % "3.3.6",
-  "org.webjars" % "jquery" % "2.2.0",
+  "org.webjars" %% "webjars-play" % "2.5.0",
+  "org.webjars" % "bootstrap" % "3.1.1-2",
+  "org.webjars" % "jquery" % "2.2.2",
   "org.webjars.bower" % "bxslider-4" % "4.2.5",
-//  "org.webjars" % "fancybox" % "2.1.5",
-//  "org.webjars" % "modernizr" % "2.8.3"
-  "org.webjars" % "font-awesome" % "4.5.0"
-//  "org.webjars.bower" % "pace" % "1.0.2"
+  "org.webjars" % "font-awesome" % "4.5.0",
+  "org.webjars" % "jquery-easing" % "1.3-2"
 )
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
@@ -29,3 +27,5 @@ mappings in Universal ++=
 //  (baseDirectory.value / "images_tab" * "*" get) map
 //    (x => x -> ("images_tab/" + x.getName))
 (baseDirectory.value / "images_tab" ***).get pair relativeTo(baseDirectory.value)
+
+ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }

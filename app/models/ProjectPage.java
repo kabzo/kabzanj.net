@@ -25,51 +25,56 @@ public class ProjectPage extends SubPage {
     private List<String> pictures;
     private String video_url;
     private String github_link;
+    private String prezi;
     private URL url;
 
-    public ProjectPage(String name){
-        super();
-        super.setName(name);
-        searchPictures();
-        this.github_link = null;
-    }
+//    public ProjectPage(String name){
+//        super();
+//        super.setName(name);
+//        searchPictures();
+//        this.github_link = null;
+//    }
+//
+//    public ProjectPage(String name,Content content){
+//        super();
+//        super.setName(name);
+//        searchPictures();
+//        this.setContentHtml(content);
+//        this.setContentHtml(project_page.render(this));
+//        this.github_link = null;
+//
+//    }
+//
+//    public ProjectPage(String name,Content content,String video_url,String metaTag){
+//        super();
+//        super.setName(name);
+//        searchPictures();
+//        this.video_url = video_url;
+//        this.setContentHtml(content);
+//        this.setContentHtml(project_page.render(this));
+//        this.github_link = null;
+//        super.setMetaTag( metaTag);
+//    }
+//
+//    public ProjectPage(String name,Content content,String video_url, String github_link,String metaTag){
+//        super();
+//        super.setName(name);
+//        searchPictures();
+//        this.video_url = video_url;
+//        this.github_link = github_link;
+//        this.setContentHtml(content);
+//        this.setContentHtml(project_page.render(this));
+//        super.setMetaTag( metaTag);
+//
+//    }
 
-    public ProjectPage(String name,Content content){
-        super();
-        super.setName(name);
-        searchPictures();
-        this.setContentHtml(content);
-        this.setContentHtml(project_page.render(this));
-        this.github_link = null;
-
-    }
-
-    public ProjectPage(String name,Content content,String video_url){
-        super();
-        super.setName(name);
-        searchPictures();
-        this.video_url = video_url;
-        this.setContentHtml(content);
-        this.setContentHtml(project_page.render(this));
-        this.github_link = null;
-    }
-
-    public ProjectPage(String name,Content content,String video_url, String github_link){
+    public ProjectPage(String name,Content content,String video_url, String github_link, String url,String prezi, String metaTag){
         super();
         super.setName(name);
         searchPictures();
         this.video_url = video_url;
         this.github_link = github_link;
-        this.setContentHtml(content);
-        this.setContentHtml(project_page.render(this));
-    }
-
-    public ProjectPage(String name,Content content,String video_url, String github_link, String url){
-        super();
-        super.setName(name);
-        searchPictures();
-        this.video_url = video_url;
-        this.github_link = github_link;
+        this.prezi = prezi;
         try {
             this.url = new URL(url);
         } catch (MalformedURLException e) {
@@ -77,6 +82,8 @@ public class ProjectPage extends SubPage {
         }
         this.setContentHtml(content);
         this.setContentHtml(project_page.render(this));
+        super.setMetaTag(metaTag);
+
 
     }
 
@@ -131,5 +138,13 @@ public class ProjectPage extends SubPage {
 
     public void setUrl(URL url) {
         this.url = url;
+    }
+
+    public String getPrezi() {
+        return prezi;
+    }
+
+    public void setPrezi(String prezi) {
+        this.prezi = prezi;
     }
 }

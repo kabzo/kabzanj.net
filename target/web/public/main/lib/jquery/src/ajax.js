@@ -1,22 +1,24 @@
 define( [
 	"./core",
 	"./var/document",
-	"./var/rnotwhite",
+	"./var/rnothtmlwhite",
 	"./ajax/var/location",
 	"./ajax/var/nonce",
 	"./ajax/var/rquery",
 
 	"./core/init",
-	"./ajax/parseJSON",
 	"./ajax/parseXML",
 	"./event/trigger",
-	"./deferred"
-], function( jQuery, document, rnotwhite, location, nonce, rquery ) {
+	"./deferred",
+	"./serialize" // jQuery.param
+], function( jQuery, document, rnothtmlwhite, location, nonce, rquery ) {
+
+"use strict";
 
 var
 	r20 = /%20/g,
 	rhash = /#.*$/,
-	rts = /([?&])_=[^&]*/,
+	rantiCache = /([?&])_=[^&]*/,
 	rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
 
 	// #7653, #8125, #8152: local protocol detection
@@ -62,7 +64,7 @@ function addToPrefiltersOrTransports( structure ) {
 
 		var dataType,
 			i = 0,
-			dataTypes = dataTypeExpression.toLowerCase().match( rnotwhite ) || [];
+			dataTypes = dataTypeExpression.toLowerCase().match( rnothtmlwhite ) || [];
 
 		if ( jQuery.isFunction( func ) ) {
 
@@ -304,6 +306,7 @@ jQuery.extend( {
 		processData: true,
 		async: true,
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+
 		/*
 		timeout: 0,
 		data: null,
@@ -347,7 +350,7 @@ jQuery.extend( {
 			"text html": true,
 
 			// Evaluate text as a json expression
-			"text json": jQuery.parseJSON,
+			"text json": JSON.parse,
 
 			// Parse text as xml
 			"text xml": jQuery.parseXML
@@ -529,18 +532,19 @@ jQuery.extend( {
 		s.type = options.method || options.type || s.method || s.type;
 
 		// Extract dataTypes list
-		s.dataTypes = jQuery.trim( s.dataType || "*" ).toLowerCase().match( rnotwhite ) || [ "" ];
+		s.dataTypes = ( s.dataType || "*" ).toLowerCase().match( rnothtmlwhite ) || [ "" ];
 
 		// A cross-domain request is in order when the origin doesn't match the current origin.
 		if ( s.crossDomain == null ) {
 			urlAnchor = document.createElement( "a" );
 
-			// Support: IE8-11+
-			// IE throws exception if url is malformed, e.g. http://example.com:80x/
+			// Support: IE <=8 - 11, Edge 12 - 13
+			// IE throws exception on accessing the href property if url is malformed,
+			// e.g. http://example.com:80x/
 			try {
 				urlAnchor.href = s.url;
 
-				// Support: IE8-11+
+				// Support: IE <=8 - 11 only
 				// Anchor's host property isn't correctly set when s.url is relative
 				urlAnchor.href = urlAnchor.href;
 				s.crossDomain = originAnchor.protocol + "//" + originAnchor.host !==
@@ -600,9 +604,9 @@ jQuery.extend( {
 				delete s.data;
 			}
 
-			// Add anti-cache in uncached url if needed
+			// Add or update anti-cache param if needed
 			if ( s.cache === false ) {
-				cacheURL = cacheURL.replace( rts, "" );
+				cacheURL = cacheURL.replace( rantiCache, "$1" );
 				uncached = ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + ( nonce++ ) + uncached;
 			}
 

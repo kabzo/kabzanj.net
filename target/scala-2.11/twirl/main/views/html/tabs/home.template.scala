@@ -31,71 +31,153 @@ class home extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format
 
 Seq[Any](format.raw/*1.56*/("""
 
-"""),format.raw/*3.1*/("""<div class="container">
+
+"""),_display_(/*4.2*/if(pictures!=null)/*4.20*/ {_display_(Seq[Any](format.raw/*4.22*/("""
+
+    """),format.raw/*6.5*/("""<section id="intro">
+    <ul class="bxslider">
+    """),_display_(/*8.6*/for((name, id) <- pictures) yield /*8.33*/ {_display_(Seq[Any](format.raw/*8.35*/("""
+        """),format.raw/*9.9*/("""<li>
+            <a href=""""),_display_(/*10.23*/routes/*10.29*/.Application.menu_id(id)),format.raw/*10.53*/(""""><img src=""""),_display_(/*10.66*/routes/*10.72*/.Application.imageAt(name)),format.raw/*10.98*/(""""  title=""""),_display_(/*10.109*/id/*10.111*/.replace('_', ' ').split(' ').map(_.capitalize).mkString(" ")),format.raw/*10.172*/("""" /></a>
+        </li>
+    """)))}),format.raw/*12.6*/("""
+    """),format.raw/*13.5*/("""</ul>
+    </section>
+
+""")))}),format.raw/*16.2*/("""
+
+"""),format.raw/*18.1*/("""<section id="about_me" class="section">
+    <div class="container">
+
     <div class="row">
-        <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="heading">
+                            <h3><span>About Me</span></h3>
+                        </div>
+                        <div class="sub-heading">
+                            <p>
+                                Student at the ETH Zurich on MSc Robitcs, Systems nd Control
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="col-lg-3 col-md-4">
-                <div class="col-xs-12" style="height:70px;"></div>
+                <div class="col-lg-3 col-md-4">
+                    <img src=""""),_display_(/*36.32*/routes/*36.38*/.Assets.versioned("images_sys/id_photo.jpg")),format.raw/*36.82*/("""" style="max-height: 450px" class="img-responsive img-rounded" >
+                </div>
+                <div class="col-lg-9 col-md-8">
+                    <div class="row">
+                        <p><b>My strongest interests</b>
+                            <ul>
+                                <li><b>Robotic Systems</b></li>
+                                <li><b>Controls</b></li>
+                                <li><b>Coding</b></li>
+                                <li>Fitness</li>
+                            </ul>
+                        </p>
 
-                <img src=""""),_display_(/*10.28*/routes/*10.34*/.Assets.versioned("images_sys/id_photo.jpg")),format.raw/*10.78*/("""" style="max-height: 450px" class="img-responsive img-rounded" >
-            </div>
-            <div class="col-lg-9 col-md-8">
-                <div class="col-lg-6">
-                    <h2>About Me</h2>
-                    <p>I always want to see my limits and try to overcome them. This was the reason why I have chosen to study, as a Slovak fresh high school graduate,
-                        <b>Electrical Engineering</b> at <b>Technical University of Vienna</b>. Even though I knew that attending higher edu-
-                        cation studies in a foreign language was going to be a challenge, I realised, that it would make me grow both
-                        personally and professionally</p>
-                    <p>To try something new I have decided to take a part in the exchange program. My choice was department of <b>Electrical Engineering</b> at the <b>ETH Zürich</b>.</p>
-                    <p><b>My strongest interests</b>
-                        <ul>
-                            <li><b>Control Systems</b></li>
-                            <li><b>Robotics</b></li>
-                            <li><b>Circuits Development</b></li>
-                            <li><b>Position Estimation</b> and <b>Kalman Filter</b></li>
-                            <li>Fitness</li>
-                        </ul>
-                    </p>
 
+                    </div>
 
                 </div>
-                <div class="col-lg-6">
-                    <h2>Experiences</h2>
-                    <ul>
-                        <li><b>Teaching Assistant</b> on subject <b>Object-Oriented Programming</b> (Java)</li>
-                        <li><b>Software Developer</b> at the <b>Institute for Microelectronics TU WIEN</b></li>
-                        <li><b>Control Systems</b> Developer</li>
-                    </ul>
-
-                </div>
-            </div>
         </div>
     </div>
 
+</section>
+
+<section class="section gray">
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="heading">
+                        <h3><span>Education</span></h3>
+                    </div>
+                </div>
+            </div>
+            <ul>
+            	<li><b>Swiss Federal Institute of Technology in Zurich (ETH)</b>: MSc Robotics, System and Control
+            	</li>
+                <li><b>Swiss Federal Institute of Technology in Zurich (ETH)</b>: B.S. in Electrical Engineering and Information Technology
+                    <ul>
+                        <li>Exchange Program</li>
+                    </ul>
+                </li>
+                <li><b>Vienna University of Technology</b>: B.S. in Electrical Engineering and Information Technology
+                    <ul>
+                        <li><b>Finnished with a distinction, GPA:</b> 1.8 (1 to 5, 1 being the best and 4 pass)</li>
+                        <li><b>Thesis Title:</b> An On-Drone Dynamic Object Track and Follow Solution for Quadcopters</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="heading">
+                        <h3><span>Experiences</span></h3>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><b>Teaching Assistant</b> on subject <b>Object-Oriented Programming</b> (Java)
+                    <ul>
+                        <li>Evaluation and rating of the Programming Exercises</li>
+                        <li>Help with the final Exam</li>
+                        <li>Teaching the selected topics</li>
+                    </ul>
+                </li>
+                <li><b>Software Developer</b> at the <b>Institute for Microelectronics TU WIEN</b>
+                    <ul>
+                        <li>Parallel Programming, CUDA, OpenCL, OpenMP</li>
+                        <li>Implementing the Fast Fourier Transform</li>
+                    </ul>
+                </li>
+                <li><b>Robotics System Developer</b> on Automation and Control Institute, Institute of Computer Engineering at Vienna University of Technology
+                    <ul>
+                        <li>Developing controllers for flying vehicles and control algorithms (Quadcopter)</li>
+                        <li>Creating control boards</li>
+                        <li>Evaluating and testing control loops</li>
+                        <li>Creating 2D maps and localization SLAM, Kalman Filter, Particle Filter</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="heading">
+                        <h3><span>Certificates</span></h3>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>edX Honor Code Certificate for <b>Autonomous Navigation for Flying Robots</b></li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="col-lg-3 col-sm-4">
-                <h2>Contact</h2>
-                <ul>
-                    <li><b>Phone:</b> +421917111219</li>
-                    <li><b>Email:</b><a href="mailto:kabzanj@gmail.com"> kabzanj&#064gmail.com</a></li>
-                    <li><b>Address:</b> Currently Zurich</li>
-                </ul>
-            </div>
-            <div class="col-lg-9 col-sm-8">
-                <h2>Certifications</h2>
-                <ul>
-                    <li>edX Honor Code Certificate for <b>Autonomous Navigation for Flying Robots</b></li>
-                    <li>Currently Working on: Udacity, <b>Machine Learning</b></li>
-                </ul>
-            </div>
 
-        </div>
-    </div>
-
-    <div class="row">
-        <h2>Programming and Frameworks Skills</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="heading">
+                        <h3><span>Programming & Softwares</span></h3>
+                    </div>
+                </div>
+            </div>
         <table class="table table-striped text-center vertical-center">
             <thead>
                 <tr>
@@ -107,57 +189,44 @@ Seq[Any](format.raw/*1.56*/("""
             <tbody>
                 <tr>
                     <td class="vertical-center"><h4>Languages</h4></td>
-                    <td><a href="www.cplusplus.com" target="_blank"> <img src=""""),_display_(/*79.81*/routes/*79.87*/.Assets.versioned("images_sys/cplusplus.png")),format.raw/*79.132*/(""""></a>
-                        <a href="http://www.maplesoft.com/products/Maple/" target="_blank"><img src=""""),_display_(/*80.103*/routes/*80.109*/.Assets.versioned("images_sys/maple.png")),format.raw/*80.150*/(""""></a>
-                        <a href="www.java.com" target="_blank"><img src=""""),_display_(/*81.75*/routes/*81.81*/.Assets.versioned("images_sys/java.png")),format.raw/*81.121*/(""""></a>
-                        <a href="www.matlab.com" target="_blank"><img src=""""),_display_(/*82.77*/routes/*82.83*/.Assets.versioned("images_sys/matlab.png")),format.raw/*82.125*/(""""></a>
-                        <a href="http://www.mathworks.com/products/simulink/" target="_blank"><img src=""""),_display_(/*83.106*/routes/*83.112*/.Assets.versioned("images_sys/simulink.png")),format.raw/*83.156*/(""""></a>
+                    <td><a href="http://www.cplusplus.com" target="_blank"> <img src=""""),_display_(/*161.88*/routes/*161.94*/.Assets.versioned("images_sys/cplusplus.png")),format.raw/*161.139*/(""""></a>
+                        <a href="http://www.maplesoft.com/products/Maple/" target="_blank"><img src=""""),_display_(/*162.103*/routes/*162.109*/.Assets.versioned("images_sys/maple.png")),format.raw/*162.150*/(""""></a>
+                        <a href="http://www.java.com" target="_blank"><img src=""""),_display_(/*163.82*/routes/*163.88*/.Assets.versioned("images_sys/java.png")),format.raw/*163.128*/(""""></a>
+                        <a href="http://www.matlab.com" target="_blank"><img src=""""),_display_(/*164.84*/routes/*164.90*/.Assets.versioned("images_sys/matlab.png")),format.raw/*164.132*/(""""></a>
+                        <a href="http://www.mathworks.com/products/simulink/" target="_blank"><img src=""""),_display_(/*165.106*/routes/*165.112*/.Assets.versioned("images_sys/simulink.png")),format.raw/*165.156*/(""""></a>
                     </td>
-                    <td> <img src=""""),_display_(/*85.37*/routes/*85.43*/.Assets.versioned("images_sys/python.png")),format.raw/*85.85*/("""">
+                    <td>
+                        <a href="https://www.python.org/" target="_blank">    <img src=""""),_display_(/*168.90*/routes/*168.96*/.Assets.versioned("images_sys/python.png")),format.raw/*168.138*/(""""></a>
                     </td>
                 </tr>
                 <tr>
                     <td class="vertical-center"><h4>Framework</h4></td>
-                    <td><a href="www.ros.org" target="_blank"><img src=""""),_display_(/*90.74*/routes/*90.80*/.Assets.versioned("images_sys/ros.png")),format.raw/*90.119*/(""""></a>
-                        <a href="http://www.qt.io/ide/" target="_blank"><img src=""""),_display_(/*91.84*/routes/*91.90*/.Assets.versioned("images_sys/qt.png")),format.raw/*91.128*/(""""></a>
-                        <a href="http://www.nvidia.com/object/cuda_home_new.html" target="_blank"><img src=""""),_display_(/*92.110*/routes/*92.116*/.Assets.versioned("images_sys/cuda.png")),format.raw/*92.156*/(""""></a>
-                        <a href="https://www.khronos.org/opencl/" target="_blank"><img src=""""),_display_(/*93.94*/routes/*93.100*/.Assets.versioned("images_sys/opencl.png")),format.raw/*93.142*/(""""></a>
+                    <td><a href="http://www.ros.org" target="_blank"><img src=""""),_display_(/*173.81*/routes/*173.87*/.Assets.versioned("images_sys/ros.png")),format.raw/*173.126*/(""""></a>
+                        <a href="http://www.qt.io/ide/" target="_blank"><img src=""""),_display_(/*174.84*/routes/*174.90*/.Assets.versioned("images_sys/qt.png")),format.raw/*174.128*/(""""></a>
+                        <a href="http://www.nvidia.com/object/cuda_home_new.html" target="_blank"><img src=""""),_display_(/*175.110*/routes/*175.116*/.Assets.versioned("images_sys/cuda.png")),format.raw/*175.156*/(""""></a>
+                        <a href="https://www.khronos.org/opencl/" target="_blank"><img src=""""),_display_(/*176.94*/routes/*176.100*/.Assets.versioned("images_sys/opencl.png")),format.raw/*176.142*/(""""></a>
 
                     </td>
                     <td>
-                        <a href="http://developer.android.com/index.html" target="_blank"><img src=""""),_display_(/*97.102*/routes/*97.108*/.Assets.versioned("images_sys/android.png")),format.raw/*97.151*/(""""></a>
-                        <a href="http://www.w3schools.com/css/" target="_blank"><img src=""""),_display_(/*98.92*/routes/*98.98*/.Assets.versioned("images_sys/css.png")),format.raw/*98.137*/(""""></a>
-                        <a href="http://www.w3schools.com/html/" target="_blank"><img src=""""),_display_(/*99.93*/routes/*99.99*/.Assets.versioned("images_sys/html.png")),format.raw/*99.139*/(""""></a>
-                        <a href="http://www.w3schools.com/js/" target="_blank"><img src=""""),_display_(/*100.91*/routes/*100.97*/.Assets.versioned("images_sys/js.png")),format.raw/*100.135*/(""""></a>
+                        <a href="http://developer.android.com/index.html" target="_blank"><img src=""""),_display_(/*180.102*/routes/*180.108*/.Assets.versioned("images_sys/android.png")),format.raw/*180.151*/(""""></a>
+                        <a href="http://www.w3schools.com/css/" target="_blank"><img src=""""),_display_(/*181.92*/routes/*181.98*/.Assets.versioned("images_sys/css.png")),format.raw/*181.137*/(""""></a>
+                        <a href="http://www.w3schools.com/html/" target="_blank"><img src=""""),_display_(/*182.93*/routes/*182.99*/.Assets.versioned("images_sys/html.png")),format.raw/*182.139*/(""""></a>
+                        <a href="http://www.w3schools.com/js/" target="_blank"><img src=""""),_display_(/*183.91*/routes/*183.97*/.Assets.versioned("images_sys/js.png")),format.raw/*183.135*/(""""></a>
                     </td>
 
                 </tr>
             </tbody>
         </table>
-    </div>
-
-
-    """),_display_(/*109.6*/if(pictures!=null)/*109.24*/ {_display_(Seq[Any](format.raw/*109.26*/("""
-        """),format.raw/*110.9*/("""<div class="row">
-            <div class="col-lg-2"></div>
-
-            <div class="col-lg-8">
-                <div class="row">
-                        <ul class="bxslider">
-                        """),_display_(/*116.26*/for((name, id) <- pictures) yield /*116.53*/ {_display_(Seq[Any](format.raw/*116.55*/("""
-                            """),format.raw/*117.29*/("""<li>
-                                <a href=""""),_display_(/*118.43*/routes/*118.49*/.Application.menu_id(id)),format.raw/*118.73*/(""""><img src=""""),_display_(/*118.86*/routes/*118.92*/.Application.imageAt(name)),format.raw/*118.118*/(""""  alt="" /></a>
-                            </li>
-                        """)))}),format.raw/*120.26*/("""
-                        """),format.raw/*121.25*/("""</ul>
-                </div>
-            </div>
-            <div class="col-lg-2"></div>
-
-
         </div>
-    """)))}),format.raw/*128.6*/("""
-"""),format.raw/*129.1*/("""</div>
+    </div>
+</div>
+    </div>
+    </section>
+
+
+
+
+</div>
 
 """))
       }
@@ -179,11 +248,11 @@ Seq[Any](format.raw/*1.56*/("""
 object home extends home_Scope0.home
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 26 11:25:03 CET 2016
-                  SOURCE: /home/duri/workspace/web/jurajkabzan_personalwebpage/app/views/tabs/home.scala.html
-                  HASH: b1ae0029f2fc5e78ad6d87f641a29aade1c4b6bc
-                  MATRIX: 775->1|924->55|952->57|1197->275|1212->281|1277->325|4527->3549|4542->3555|4609->3600|4746->3709|4762->3715|4825->3756|4933->3837|4948->3843|5010->3883|5120->3966|5135->3972|5199->4014|5339->4126|5355->4132|5421->4176|5517->4245|5532->4251|5595->4293|5839->4510|5854->4516|5915->4555|6032->4645|6047->4651|6107->4689|6251->4805|6267->4811|6329->4851|6456->4951|6472->4957|6536->4999|6724->5159|6740->5165|6805->5208|6930->5306|6945->5312|7006->5351|7132->5450|7147->5456|7209->5496|7334->5593|7350->5599|7411->5637|7550->5749|7578->5767|7619->5769|7656->5778|7884->5978|7928->6005|7969->6007|8027->6036|8102->6083|8118->6089|8164->6113|8205->6126|8221->6132|8270->6158|8378->6234|8432->6259|8574->6370|8603->6371
-                  LINES: 27->1|32->1|34->3|41->10|41->10|41->10|110->79|110->79|110->79|111->80|111->80|111->80|112->81|112->81|112->81|113->82|113->82|113->82|114->83|114->83|114->83|116->85|116->85|116->85|121->90|121->90|121->90|122->91|122->91|122->91|123->92|123->92|123->92|124->93|124->93|124->93|128->97|128->97|128->97|129->98|129->98|129->98|130->99|130->99|130->99|131->100|131->100|131->100|140->109|140->109|140->109|141->110|147->116|147->116|147->116|148->117|149->118|149->118|149->118|149->118|149->118|149->118|151->120|152->121|159->128|160->129
+                  DATE: Mon Nov 28 12:02:34 CET 2016
+                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/tabs/home.scala.html
+                  HASH: 79aaaa0c42ac9efd0a9f19e3a67a5d1955143923
+                  MATRIX: 775->1|924->55|953->59|979->77|1018->79|1050->85|1127->137|1169->164|1208->166|1243->175|1297->202|1312->208|1357->232|1397->245|1412->251|1459->277|1498->288|1510->290|1593->351|1651->379|1683->384|1736->407|1765->409|2481->1098|2496->1104|2561->1148|7399->5958|7415->5964|7483->6009|7621->6118|7638->6124|7702->6165|7818->6253|7834->6259|7897->6299|8015->6389|8031->6395|8096->6437|8237->6549|8254->6555|8321->6599|8496->6746|8512->6752|8577->6794|8833->7022|8849->7028|8911->7067|9029->7157|9045->7163|9106->7201|9251->7317|9268->7323|9331->7363|9459->7463|9476->7469|9541->7511|9730->7671|9747->7677|9813->7720|9939->7818|9955->7824|10017->7863|10144->7962|10160->7968|10223->8008|10348->8105|10364->8111|10425->8149
+                  LINES: 27->1|32->1|35->4|35->4|35->4|37->6|39->8|39->8|39->8|40->9|41->10|41->10|41->10|41->10|41->10|41->10|41->10|41->10|41->10|43->12|44->13|47->16|49->18|67->36|67->36|67->36|192->161|192->161|192->161|193->162|193->162|193->162|194->163|194->163|194->163|195->164|195->164|195->164|196->165|196->165|196->165|199->168|199->168|199->168|204->173|204->173|204->173|205->174|205->174|205->174|206->175|206->175|206->175|207->176|207->176|207->176|211->180|211->180|211->180|212->181|212->181|212->181|213->182|213->182|213->182|214->183|214->183|214->183
                   -- GENERATED --
               */
           

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/routes
-// @DATE:Fri Feb 26 11:25:03 CET 2016
+// @SOURCE:/home/duri/workspace/web/www.kabzanj.net/conf/routes
+// @DATE:Mon Nov 28 11:44:26 CET 2016
 
 package router
 
@@ -18,9 +18,9 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   Application_2: controllers.Application,
-  // @LINE:8
+  // @LINE:10
   Assets_1: controllers.Assets,
-  // @LINE:15
+  // @LINE:17
   WebJarAssets_0: controllers.WebJarAssets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -29,9 +29,9 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     Application_2: controllers.Application,
-    // @LINE:8
+    // @LINE:10
     Assets_1: controllers.Assets,
-    // @LINE:15
+    // @LINE:17
     WebJarAssets_0: controllers.WebJarAssets
   ) = this(errorHandler, Application_2, Assets_1, WebJarAssets_0, "/")
 
@@ -47,8 +47,9 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.Application.menu_id(pageKey:String ?= "home")"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/file""", """controllers.Application.menu_string(str:String)"""),
+    ("""GET""", this.prefix, """controllers.Application.menu_id(pageKey:String = "home")"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/$pageKey<[^/]+>""", """controllers.Application.menu_id(pageKey:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """file/$str<[^/]+>""", """controllers.Application.menu_string(str:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sitemap.xml""", """controllers.Assets.at(path:String = "/public", file:String = "sitemap.xml")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """images/$file<.+>""", """controllers.Application.imageAt(file:String)"""),
@@ -78,10 +79,27 @@ class Routes(
   )
 
   // @LINE:7
-  private[this] lazy val controllers_Application_menu_string1_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/file")))
+  private[this] lazy val controllers_Application_menu_id1_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/"), DynamicPart("pageKey", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_Application_menu_string1_invoker = createInvoker(
+  private[this] lazy val controllers_Application_menu_id1_invoker = createInvoker(
+    Application_2.menu_id(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "menu_id",
+      Seq(classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """menu/$pageKey<[^/]+>"""
+    )
+  )
+
+  // @LINE:9
+  private[this] lazy val controllers_Application_menu_string2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("file/"), DynamicPart("str", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_Application_menu_string2_invoker = createInvoker(
     Application_2.menu_string(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -90,15 +108,15 @@ class Routes(
       Seq(classOf[String]),
       "GET",
       """""",
-      this.prefix + """menu/file"""
+      this.prefix + """file/$str<[^/]+>"""
     )
   )
 
-  // @LINE:8
-  private[this] lazy val controllers_Assets_at2_route = Route("GET",
+  // @LINE:10
+  private[this] lazy val controllers_Assets_at3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sitemap.xml")))
   )
-  private[this] lazy val controllers_Assets_at2_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at3_invoker = createInvoker(
     Assets_1.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -111,11 +129,11 @@ class Routes(
     )
   )
 
-  // @LINE:11
-  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
+  // @LINE:13
+  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -128,11 +146,11 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_Application_imageAt4_route = Route("GET",
+  // @LINE:14
+  private[this] lazy val controllers_Application_imageAt5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("images/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Application_imageAt4_invoker = createInvoker(
+  private[this] lazy val controllers_Application_imageAt5_invoker = createInvoker(
     Application_2.imageAt(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -145,11 +163,11 @@ class Routes(
     )
   )
 
-  // @LINE:15
-  private[this] lazy val controllers_WebJarAssets_at5_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_WebJarAssets_at6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("webjars/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_WebJarAssets_at5_invoker = createInvoker(
+  private[this] lazy val controllers_WebJarAssets_at6_invoker = createInvoker(
     WebJarAssets_0.at(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -167,38 +185,44 @@ class Routes(
   
     // @LINE:6
     case controllers_Application_menu_id0_route(params) =>
-      call(params.fromQuery[String]("pageKey", Some("home"))) { (pageKey) =>
+      call(Param[String]("pageKey", Right("home"))) { (pageKey) =>
         controllers_Application_menu_id0_invoker.call(Application_2.menu_id(pageKey))
       }
   
     // @LINE:7
-    case controllers_Application_menu_string1_route(params) =>
-      call(params.fromQuery[String]("str", None)) { (str) =>
-        controllers_Application_menu_string1_invoker.call(Application_2.menu_string(str))
+    case controllers_Application_menu_id1_route(params) =>
+      call(params.fromPath[String]("pageKey", None)) { (pageKey) =>
+        controllers_Application_menu_id1_invoker.call(Application_2.menu_id(pageKey))
       }
   
-    // @LINE:8
-    case controllers_Assets_at2_route(params) =>
+    // @LINE:9
+    case controllers_Application_menu_string2_route(params) =>
+      call(params.fromPath[String]("str", None)) { (str) =>
+        controllers_Application_menu_string2_invoker.call(Application_2.menu_string(str))
+      }
+  
+    // @LINE:10
+    case controllers_Assets_at3_route(params) =>
       call(Param[String]("path", Right("/public")), Param[String]("file", Right("sitemap.xml"))) { (path, file) =>
-        controllers_Assets_at2_invoker.call(Assets_1.at(path, file))
+        controllers_Assets_at3_invoker.call(Assets_1.at(path, file))
       }
   
-    // @LINE:11
-    case controllers_Assets_versioned3_route(params) =>
+    // @LINE:13
+    case controllers_Assets_versioned4_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned4_invoker.call(Assets_1.versioned(path, file))
       }
   
-    // @LINE:12
-    case controllers_Application_imageAt4_route(params) =>
+    // @LINE:14
+    case controllers_Application_imageAt5_route(params) =>
       call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_Application_imageAt4_invoker.call(Application_2.imageAt(file))
+        controllers_Application_imageAt5_invoker.call(Application_2.imageAt(file))
       }
   
-    // @LINE:15
-    case controllers_WebJarAssets_at5_route(params) =>
+    // @LINE:17
+    case controllers_WebJarAssets_at6_route(params) =>
       call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_WebJarAssets_at5_invoker.call(WebJarAssets_0.at(file))
+        controllers_WebJarAssets_at6_invoker.call(WebJarAssets_0.at(file))
       }
   }
 }

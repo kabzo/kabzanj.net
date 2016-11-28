@@ -5,7 +5,6 @@ jQuery(document).ready(function ($) {
     $('.bxslider').bxSlider({
         mode: 'horizontal',
         captions: true,
-        adaptiveHeight: true,
         auto: true,
         autoControls: true
 
@@ -46,6 +45,8 @@ jQuery(document).ready(function ($) {
         return false;
     })
 
+    //navigation
+
+
 
 });
-

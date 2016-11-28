@@ -84,8 +84,8 @@ This is very effective and lightweight protocol which covers transfer of the mos
 object quadcopter extends quadcopter_Scope0.quadcopter
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 26 13:02:20 CET 2016
-                  SOURCE: /home/duri/workspace/web/jurajkabzan_personalwebpage/app/views/projects/quadcopter.scala.html
+                  DATE: Mon Nov 28 11:44:27 CET 2016
+                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/projects/quadcopter.scala.html
                   HASH: d3a731ec8347e5429867cf879caddfb653143e08
                   MATRIX: 846->0
                   LINES: 32->1

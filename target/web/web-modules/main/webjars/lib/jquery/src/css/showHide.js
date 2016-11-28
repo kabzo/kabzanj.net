@@ -1,8 +1,10 @@
 define( [
 	"../core",
 	"../data/var/dataPriv",
-	"../css/var/isHidden"
-], function( jQuery, dataPriv, isHidden ) {
+	"../css/var/isHiddenWithinTree"
+], function( jQuery, dataPriv, isHiddenWithinTree ) {
+
+"use strict";
 
 var defaultDisplayMap = {};
 
@@ -16,7 +18,7 @@ function getDefaultDisplay( elem ) {
 		return display;
 	}
 
-	temp = doc.body.appendChild( doc.createElement( nodeName ) ),
+	temp = doc.body.appendChild( doc.createElement( nodeName ) );
 	display = jQuery.css( temp, "display" );
 
 	temp.parentNode.removeChild( temp );
@@ -54,12 +56,7 @@ function showHide( elements, show ) {
 					elem.style.display = "";
 				}
 			}
-			if ( elem.style.display === "" && jQuery.css( elem, "display" ) === "none" &&
-
-					// Support: Firefox <=42 - 43
-					// Don't set inline display on disconnected elements with computed display: none
-					jQuery.contains( elem.ownerDocument, elem ) ) {
-
+			if ( elem.style.display === "" && isHiddenWithinTree( elem ) ) {
 				values[ index ] = getDefaultDisplay( elem );
 			}
 		} else {
@@ -95,7 +92,7 @@ jQuery.fn.extend( {
 		}
 
 		return this.each( function() {
-			if ( isHidden( this ) ) {
+			if ( isHiddenWithinTree( this ) ) {
 				jQuery( this ).show();
 			} else {
 				jQuery( this ).hide();

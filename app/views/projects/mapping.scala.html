@@ -1,0 +1,20 @@
+<p>
+<h1>Mapping and GoTo with ROS</h1>
+</p>
+
+<p>
+  <h2>Gmapping</h2>
+  We used the version of gmapping provided as node slam_gmapping in the ROS package gmapping.
+  It requires laser scan and odometry data and provides the generated map at the topic map. For the
+  simulation we only had to remap the topic of the laser scanner output (from scan to base_scan) and
+  adjust the parameters that specify the size of the generated map (xmin, ymin, xmax and ymax).
+  <h2>GoTo</h2>
+  For path planning we used the ROS navigation stack. The main component of this stack is
+move_base which uses a local and a global planner to reach the specified goal by sending
+movement commands to the cmd_vel topic.
+We used two different setups – in the first one we use a map that has been previously created using
+gmapping (and is provided by a map_server node) and localize using amcl. In the second setup we
+use gmapping together with path planning and thus create the map on the go – in this setup
+gmapping provides the map and the localization.
+
+</p>

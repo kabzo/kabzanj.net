@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/routes
-// @DATE:Fri Feb 26 11:25:03 CET 2016
+// @SOURCE:/home/duri/workspace/web/www.kabzanj.net/conf/routes
+// @DATE:Mon Nov 28 11:44:26 CET 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:15
+  // @LINE:17
   class ReverseWebJarAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:15
+    // @LINE:17
     def at(file:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "webjars/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -28,20 +28,20 @@ package controllers {
   
   }
 
-  // @LINE:8
+  // @LINE:10
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:8
+    // @LINE:10
     def at(): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public"), ("file", "sitemap.xml")))
       Call("GET", _prefix + { _defaultPrefix } + "sitemap.xml")
     }
   
-    // @LINE:11
+    // @LINE:13
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -57,18 +57,31 @@ package controllers {
 
   
     // @LINE:6
-    def menu_id(pageKey:String = "home"): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + queryString(List(if(pageKey == "home") None else Some(implicitly[QueryStringBindable[String]].unbind("pageKey", pageKey)))))
+    def menu_id(pageKey:String): Call = {
+    
+      (pageKey: @unchecked) match {
+      
+        // @LINE:6
+        case (pageKey) if pageKey == "home" =>
+          implicit val _rrc = new ReverseRouteContext(Map(("pageKey", "home")))
+          Call("GET", _prefix)
+      
+        // @LINE:7
+        case (pageKey)  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "menu/" + implicitly[PathBindable[String]].unbind("pageKey", dynamicString(pageKey)))
+      
+      }
+    
     }
   
-    // @LINE:7
+    // @LINE:9
     def menu_string(str:String): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "menu/file" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("str", str)))))
+      Call("GET", _prefix + { _defaultPrefix } + "file/" + implicitly[PathBindable[String]].unbind("str", dynamicString(str)))
     }
   
-    // @LINE:12
+    // @LINE:14
     def imageAt(file:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "images/" + implicitly[PathBindable[String]].unbind("file", file))

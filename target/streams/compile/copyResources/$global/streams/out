@@ -1,5 +1,4 @@
-[debug] Copy resource mappings: 
-[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/logback.xml,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/logback.xml)
-[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/routes,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/routes)
-[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/application.conf,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/application.conf)
-[debug] 	(/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/application.conf~,/home/duri/workspace/web/jurajkabzan_personalwebpage/target/scala-2.11/classes/application.conf~)
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/duri/workspace/web/www.kabzanj.net/conf/application.conf,/home/duri/workspace/web/www.kabzanj.net/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/duri/workspace/web/www.kabzanj.net/conf/routes,/home/duri/workspace/web/www.kabzanj.net/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/duri/workspace/web/www.kabzanj.net/conf/logback.xml,/home/duri/workspace/web/www.kabzanj.net/target/scala-2.11/classes/logback.xml)[0m

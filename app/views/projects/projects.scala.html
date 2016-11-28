@@ -1,0 +1,40 @@
+@(currentPage: TabPage)
+
+<header>
+    <div  class="navbar navbar-default navbar-fixed-top" id="top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="@routes.Application.menu_id("home")"><span>Juraj</span> Kabzan</a>
+          </div>
+
+          <div class="navigation">
+            <div class="navbar-collapse collapse " id="bs-example-navbar-collapse-2">
+              <ul class="nav navbar-nav" >
+              @if(currentPage.getSubPages().size != 0) {
+                @for(p <- currentPage.getSubPages()) {
+                  <li><a class="page-scroll" href="#@p.getName()">@p.getShowName()</a></li>
+                }
+              }
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+</header>
+
+
+
+@for(p <- currentPage.getSubPages()) {
+    @if((currentPage.getSubPages().indexWhere(_==p) % 2)== 0){
+        <section id="@p.getName()">
+    }else{
+        <section id="@p.getName()" class="gray">
+    }
+    @p.getContentHtml()
+  </section>
+}

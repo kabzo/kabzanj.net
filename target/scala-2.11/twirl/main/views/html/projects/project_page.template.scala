@@ -30,57 +30,71 @@ class project_page extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendabl
 
 
 Seq[Any](format.raw/*1.28*/("""
-"""),format.raw/*2.1*/("""<div class="container">
-    <div class="row">
+
+
+
+"""),format.raw/*5.1*/("""<div class="container">
+    <div class="row spacer">
         <div class="col-lg-6">
-            """),_display_(/*5.14*/currentPage/*5.25*/.getContentHtml()),format.raw/*5.42*/("""
-            """),format.raw/*6.13*/("""<div class="row">
-                """),_display_(/*7.18*/if(currentPage.getGithub_link() != null)/*7.58*/ {_display_(Seq[Any](format.raw/*7.60*/("""
-                    """),format.raw/*8.21*/("""<div class="col-sm-2 text-center">
+            """),_display_(/*8.14*/currentPage/*8.25*/.getContentHtml()),format.raw/*8.42*/("""
+            """),format.raw/*9.13*/("""<div class="row">
+                """),_display_(/*10.18*/if(currentPage.getGithub_link() != null)/*10.58*/ {_display_(Seq[Any](format.raw/*10.60*/("""
+                    """),format.raw/*11.21*/("""<div class="col-sm-2 text-center">
                         GitHub
-                        <a href=""""),_display_(/*10.35*/currentPage/*10.46*/.getGithub_link()),format.raw/*10.63*/("""" target="_blank">
+                        <a href=""""),_display_(/*13.35*/currentPage/*13.46*/.getGithub_link()),format.raw/*13.63*/("""" target="_blank">
                             <i class="fa fa-github fa-5x"></i>
                         </a>
                     </div>
-                """)))}),format.raw/*14.18*/("""
-                """),_display_(/*15.18*/if(currentPage.getUrl() != null)/*15.50*/ {_display_(Seq[Any](format.raw/*15.52*/("""
-                        """),format.raw/*16.25*/("""<div class="col-sm-2 text-center">
+                """)))}),format.raw/*17.18*/("""
+                """),_display_(/*18.18*/if(currentPage.getUrl() != null)/*18.50*/ {_display_(Seq[Any](format.raw/*18.52*/("""
+                        """),format.raw/*19.25*/("""<div class="col-sm-2 text-center">
                         Document
-                        <a href=""""),_display_(/*18.35*/routes/*18.41*/.Application.menu_string(currentPage.getName())),format.raw/*18.88*/("""" target="_blank">
+                        <a href=""""),_display_(/*21.35*/routes/*21.41*/.Application.menu_string(currentPage.getName())),format.raw/*21.88*/("""" target="_blank">
                             <i class="fa fa-file-pdf-o fa-5x"></i>
                         </a>
                     </div>
-                """)))}),format.raw/*22.18*/("""
-            """),format.raw/*23.13*/("""</div>
+                """)))}),format.raw/*25.18*/("""
+            """),format.raw/*26.13*/("""</div>
         </div>
         <div class="col-lg-5 col-lg-offset-1">
+            <div id=" project_page">
             <div class="row spacer">
-            """),_display_(/*27.14*/if(currentPage.getPictures().size != 0 && currentPage.getPictures().size > 1)/*27.91*/ {_display_(Seq[Any](format.raw/*27.93*/("""
-                    """),format.raw/*28.21*/("""<!-- Slider -->
+            """),_display_(/*31.14*/if(currentPage.getPictures().size != 0 && currentPage.getPictures().size > 1)/*31.91*/ {_display_(Seq[Any](format.raw/*31.93*/("""
+                    """),format.raw/*32.21*/("""<!-- Slider -->
                 <ul class="bxslider">
-                """),_display_(/*30.18*/for(p <- currentPage.getPictures()) yield /*30.53*/ {_display_(Seq[Any](format.raw/*30.55*/("""
-                    """),format.raw/*31.21*/("""<li>
-                        <img src=""""),_display_(/*32.36*/routes/*32.42*/.Application.imageAt("images_tab/" + currentPage.getName() + "/" + p)),format.raw/*32.111*/("""" alt="" />
+                """),_display_(/*34.18*/for(p <- currentPage.getPictures()) yield /*34.53*/ {_display_(Seq[Any](format.raw/*34.55*/("""
+                    """),format.raw/*35.21*/("""<li>
+                        <img src=""""),_display_(/*36.36*/routes/*36.42*/.Application.imageAt("images_tab/" + currentPage.getName() + "/" + p)),format.raw/*36.111*/("""" alt="" />
                     </li>
-                """)))}),format.raw/*34.18*/("""
-                """),format.raw/*35.17*/("""</ul>
+                """)))}),format.raw/*38.18*/("""
+                """),format.raw/*39.17*/("""</ul>
 
                     <!-- end slider -->
-            """)))}/*38.15*/else/*38.20*/{_display_(Seq[Any](format.raw/*38.21*/("""
-                """),_display_(/*39.18*/if(currentPage.getPictures().size != 0)/*39.57*/ {_display_(Seq[Any](format.raw/*39.59*/("""
-                    """),format.raw/*40.21*/("""<img src=""""),_display_(/*40.32*/routes/*40.38*/.Application.imageAt("images_tab/" + currentPage.getName() + "/" + currentPage.getPictures()(0))),format.raw/*40.134*/("""" alt="" />
-                """)))}),format.raw/*41.18*/("""
-            """)))}),format.raw/*42.14*/("""
-            """),format.raw/*43.13*/("""</div>
-            <div class="row">
-            """),_display_(/*45.14*/if(currentPage.getVideo_url() != null)/*45.52*/ {_display_(Seq[Any](format.raw/*45.54*/("""
-                """),format.raw/*46.17*/("""<div class="embed-container">
-                    <iframe class="embed-responsive-item" src="""),_display_(/*47.64*/currentPage/*47.75*/.getVideo_url()),format.raw/*47.90*/(""" """),format.raw/*47.91*/("""frameborder="0" allowfullscreen></iframe>
+            """)))}/*42.15*/else/*42.20*/{_display_(Seq[Any](format.raw/*42.21*/("""
+                """),_display_(/*43.18*/if(currentPage.getPictures().size != 0)/*43.57*/ {_display_(Seq[Any](format.raw/*43.59*/("""
+                    """),format.raw/*44.21*/("""<div class="text-center">
+                        <img class="fit-image" src=""""),_display_(/*45.54*/routes/*45.60*/.Application.imageAt("images_tab/" + currentPage.getName() + "/" + currentPage.getPictures()(0))),format.raw/*45.156*/("""" alt="" />
+                    </div>
+                """)))}),format.raw/*47.18*/("""
+            """)))}),format.raw/*48.14*/("""
+            """),format.raw/*49.13*/("""</div>
+            </div>
+            """),_display_(/*51.14*/if(currentPage.getVideo_url() != null)/*51.52*/ {_display_(Seq[Any](format.raw/*51.54*/("""
+                """),format.raw/*52.17*/("""<div class="row">
+                    <div class="embed-container">
+                        <iframe class="embed-responsive-item" src="""),_display_(/*54.68*/currentPage/*54.79*/.getVideo_url()),format.raw/*54.94*/(""" """),format.raw/*54.95*/("""frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
-            """)))}),format.raw/*49.14*/("""
-            """),format.raw/*50.13*/("""</div>
 
-        </div>
+            """)))}),format.raw/*58.14*/("""
+
+                """),_display_(/*60.18*/if(currentPage.getPrezi() != null)/*60.52*/ {_display_(Seq[Any](format.raw/*60.54*/("""
+                    """),format.raw/*61.21*/("""<div class="row">
+                    <iframe src=""""),_display_(/*62.35*/currentPage/*62.46*/.getPrezi()),format.raw/*62.57*/("""&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI0dDR3Ri8xN21kdmJNUjRQTW9BVThTV1lBPT0&amp;landing_sign=FvlXTmDLk6v5PK8ZRfC03iDOBlB-6iam_r1oc_zuP7Q" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" width="550" frameborder="0" height="400"></iframe>
+                    </div>
+                """)))}),format.raw/*64.18*/("""
+
+        """),format.raw/*66.9*/("""</div>
     </div>
 </div>
 
@@ -104,11 +118,11 @@ Seq[Any](format.raw/*1.28*/("""
 object project_page extends project_page_Scope0.project_page
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 26 11:25:03 CET 2016
-                  SOURCE: /home/duri/workspace/web/jurajkabzan_personalwebpage/app/views/projects/project_page.scala.html
-                  HASH: 129c6aa2ae59770433b255d12188f697a9e2d070
-                  MATRIX: 773->1|894->27|921->28|1037->118|1056->129|1093->146|1133->159|1194->194|1242->234|1281->236|1329->257|1456->357|1476->368|1514->385|1700->540|1745->558|1786->590|1826->592|1879->617|2008->719|2023->725|2091->772|2281->931|2322->944|2468->1063|2554->1140|2594->1142|2643->1163|2741->1234|2792->1269|2832->1271|2881->1292|2948->1332|2963->1338|3054->1407|3140->1462|3185->1479|3264->1540|3277->1545|3316->1546|3361->1564|3409->1603|3449->1605|3498->1626|3536->1637|3551->1643|3669->1739|3729->1768|3774->1782|3815->1795|3892->1845|3939->1883|3979->1885|4024->1902|4144->1995|4164->2006|4200->2021|4229->2022|4338->2100|4379->2113
-                  LINES: 27->1|32->1|33->2|36->5|36->5|36->5|37->6|38->7|38->7|38->7|39->8|41->10|41->10|41->10|45->14|46->15|46->15|46->15|47->16|49->18|49->18|49->18|53->22|54->23|58->27|58->27|58->27|59->28|61->30|61->30|61->30|62->31|63->32|63->32|63->32|65->34|66->35|69->38|69->38|69->38|70->39|70->39|70->39|71->40|71->40|71->40|71->40|72->41|73->42|74->43|76->45|76->45|76->45|77->46|78->47|78->47|78->47|78->47|80->49|81->50
+                  DATE: Mon Nov 28 11:44:27 CET 2016
+                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/projects/project_page.scala.html
+                  HASH: 7dbe4b4b8b060e355a1da8b4458ee9520581c24e
+                  MATRIX: 773->1|894->27|924->31|1047->128|1066->139|1103->156|1143->169|1205->204|1254->244|1294->246|1343->267|1470->367|1490->378|1528->395|1714->550|1759->568|1800->600|1840->602|1893->627|2022->729|2037->735|2105->782|2295->941|2336->954|2519->1110|2605->1187|2645->1189|2694->1210|2792->1281|2843->1316|2883->1318|2932->1339|2999->1379|3014->1385|3105->1454|3191->1509|3236->1526|3315->1587|3328->1592|3367->1593|3412->1611|3460->1650|3500->1652|3549->1673|3655->1752|3670->1758|3788->1854|3875->1910|3920->1924|3961->1937|4027->1976|4074->2014|4114->2016|4159->2033|4321->2168|4341->2179|4377->2194|4406->2195|4543->2301|4589->2320|4632->2354|4672->2356|4721->2377|4800->2429|4820->2440|4852->2451|5293->2861|5330->2871
+                  LINES: 27->1|32->1|36->5|39->8|39->8|39->8|40->9|41->10|41->10|41->10|42->11|44->13|44->13|44->13|48->17|49->18|49->18|49->18|50->19|52->21|52->21|52->21|56->25|57->26|62->31|62->31|62->31|63->32|65->34|65->34|65->34|66->35|67->36|67->36|67->36|69->38|70->39|73->42|73->42|73->42|74->43|74->43|74->43|75->44|76->45|76->45|76->45|78->47|79->48|80->49|82->51|82->51|82->51|83->52|85->54|85->54|85->54|85->54|89->58|91->60|91->60|91->60|92->61|93->62|93->62|93->62|95->64|97->66
                   -- GENERATED --
               */
           

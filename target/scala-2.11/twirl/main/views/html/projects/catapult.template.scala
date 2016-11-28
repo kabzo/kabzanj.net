@@ -68,8 +68,8 @@ is able to shoot an object to the distance 20cm.
 object catapult extends catapult_Scope0.catapult
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 26 13:09:54 CET 2016
-                  SOURCE: /home/duri/workspace/web/jurajkabzan_personalwebpage/app/views/projects/catapult.scala.html
+                  DATE: Mon Nov 28 11:44:27 CET 2016
+                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/projects/catapult.scala.html
                   HASH: 105205f088f23eb395dae36530d02cea32f81cf8
                   MATRIX: 842->0
                   LINES: 32->1

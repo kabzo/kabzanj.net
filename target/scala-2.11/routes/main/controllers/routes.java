@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/duri/workspace/web/jurajkabzan_personalwebpage/conf/routes
-// @DATE:Fri Feb 26 11:25:03 CET 2016
+// @SOURCE:/home/duri/workspace/web/www.kabzanj.net/conf/routes
+// @DATE:Mon Nov 28 11:44:26 CET 2016
 
 package controllers;
 

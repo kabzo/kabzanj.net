@@ -3,9 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.menu_id(pageKey: String ?= "home")
-GET     /menu/file                  controllers.Application.menu_string(str: String)
-GET     /sitemap.xml                  controllers.Assets.at(path="/public", file = "sitemap.xml")
+GET     /                         controllers.Application.menu_id(pageKey = "home")
+GET     /menu/:pageKey              controllers.Application.menu_id(pageKey: String)
+
+GET     /file/:str                  controllers.Application.menu_string(str: String)
+GET     /sitemap.xml                controllers.Assets.at(path="/public", file = "sitemap.xml")
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

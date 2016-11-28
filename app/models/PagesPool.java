@@ -4,14 +4,11 @@ package models;
  * Created by duri on 16.11.15.
  */
 
+import controllers.WebJarAssets;
 import play.api.Application;
 import play.api.Play;
 import play.Logger;
-import views.html.projects.nxtuino;
-import views.html.projects.object_following;
-import views.html.projects.quadcopter;
-import views.html.projects.viennacl;
-import views.html.projects.catapult;
+import views.html.projects.*;
 
 import views.html.tabs.home;
 
@@ -41,35 +38,62 @@ public class PagesPool {
         currentId = 0;
         List<TabPage> tabPages = new ArrayList<TabPage>();
 
-        tabPages.add(new TabPage("home",home.render(null,null)));
-        tabPages.add(new TabPage("projects",new ArrayList<SubPage>(){{
+        tabPages.add(new TabPage("home",home.render(null,null),"Juraj Kabzan, student of Electrical Engineering at ETH Zurich. On this page you can get to know more about me and my experiences."));
+         tabPages.add(new TabPage("projects",new ArrayList<SubPage>(){{
 
-            add(new ProjectPage("nxtuino",
-                    nxtuino.render(),
-                    "https://www.youtube.com/embed/G22mwWAuG64\n",
-                    "https://github.com/kabzo/NXTuino"));
+                     add(new ProjectPage("object_follow",
+                             object_following.render(),
+                             "https://www.youtube.com/embed/4itE-V_eS4A",
+                             "https://github.com/kabzo/Object-Track-and-Follow",
+                             "https://owncloud.kabzanj.net/index.php/s/72EGZGtNixAd17P/download",
+                             "https://prezi.com/embed/bsltpbiif1sv/?bgcolor=ffffff",
+                             "Drone tracking object autonomously, video tracking with TLD, just initialization necessary," +
+                                     "An On-Drone Dynamic Object Track and Follow Solution for Quadcopters"));
 
-            add(new ProjectPage("quadcopter",
-                    quadcopter.render(),
-                    "https://www.youtube.com/embed/tBAi76bqvyE",
-                    "https://github.com/kabzo/Quadcopter"));
+                     add(new ProjectPage("quadcopter",
+                             quadcopter.render(),
+                             "https://www.youtube.com/embed/tBAi76bqvyE",
+                             "https://github.com/kabzo/Quadcopter",
+                             null,
+                             null,
+                             "I have developed quadcopter control board based on Teensy 3.1 and MPU9050"));
 
-            add(new ProjectPage("object_follow",
-                    object_following.render(),
-                    "https://www.youtube.com/embed/4itE-V_eS4A",
-                    "https://github.com/kabzo/Object-Track-and-Follow",
-                    "https://owncloud.kabzanj.net/index.php/s/72EGZGtNixAd17P/download"));
+                     add(new ProjectPage("viennacl",
+                             viennacl.render(),
+                             null,
+                             "https://github.com/viennacl/viennacl-dev",
+                             null,
+                             null,
+                             "During summer I have taken a part in Summer of CODE C++, Implementation of FFT with CUDA and OpenCL"));
 
-            add(new ProjectPage("weight_catapult",
-                    catapult.render(),
-                    null,
-                    "https://github.com/kabzo/Weight-and-Catapult"));
+                     add(new ProjectPage("mapping",
+                             mapping.render(),
+                             "https://www.youtube.com/embed/metQnEulrWA",
+                             null,
+                             "https://owncloud.kabzanj.net/index.php/s/Lmn5LeJq12A9qUY/download",
+                             null,
+                             "Mapping 2D room with ros gmapping and further with generated map, calculate path from place to place with goto"));
 
-            add(new ProjectPage("viennacl",
-                    viennacl.render(),
-                    null,
-                    "https://github.com/viennacl/viennacl-dev"));
-        }}));
+                     add(new ProjectPage("nxtuino",
+                             nxtuino.render(),
+                             "https://www.youtube.com/embed/G22mwWAuG64\n",
+                             "https://github.com/kabzo/NXTuino",
+                             null,
+                             null,
+                             "balancing vehicle with arduino and MOU6010"));
+
+                     add(new ProjectPage("weight_catapult",
+                             catapult.render(),
+                             null,
+                             "https://github.com/kabzo/Weight-and-Catapult",
+                             null,
+                             null,
+                             "Meassuring weigh with precision of 0.1g and further shot it at least to 20cm distance"));
+
+                 }},"All my projects, Control Board, Quadcopter, Drone, Tracking in video Frame with OpenTLD, Processing on board, Nvidia Jetson," +
+                 "An On-Drone Dynamic Object Track and Follow Solution for Quadcopters"));
+
+         tabPages.get(1).setContentHtml(projects.render(tabPages.get(1)));
          tabPages.get(0).setContentHtml(home.render(getAllPictures(tabPages),tabPages));
         return tabPages;
     }
