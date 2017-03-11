@@ -102,8 +102,8 @@ video.
 object object_following extends object_following_Scope0.object_following
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 28 11:44:27 CET 2016
-                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/projects/object_following.scala.html
+                  DATE: Tue Feb 28 21:52:04 CET 2017
+                  SOURCE: /home/duri/workspace/web/kabzanj.net/app/views/projects/object_following.scala.html
                   HASH: 83764cd5a31936f918ae3a9463b4ce4b1c958006
                   MATRIX: 858->0
                   LINES: 32->1

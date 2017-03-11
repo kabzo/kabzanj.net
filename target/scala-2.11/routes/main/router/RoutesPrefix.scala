@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/duri/workspace/git/kabzanj.net/conf/routes
-// @DATE:Mon Nov 28 12:29:15 CET 2016
+// @SOURCE:/home/duri/workspace/web/kabzanj.net/conf/routes
+// @DATE:Mon Nov 28 13:02:34 CET 2016
 
 
 package router {

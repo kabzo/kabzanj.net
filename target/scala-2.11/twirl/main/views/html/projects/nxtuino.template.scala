@@ -78,8 +78,8 @@ As you might see in the video, the results are satisfiable but there are still m
 object nxtuino extends nxtuino_Scope0.nxtuino
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 28 11:44:27 CET 2016
-                  SOURCE: /home/duri/workspace/web/www.kabzanj.net/app/views/projects/nxtuino.scala.html
+                  DATE: Tue Feb 28 21:52:04 CET 2017
+                  SOURCE: /home/duri/workspace/web/kabzanj.net/app/views/projects/nxtuino.scala.html
                   HASH: 21677e604562be03f724c970aac4c241856e2117
                   MATRIX: 840->0
                   LINES: 32->1

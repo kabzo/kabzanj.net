@@ -1,4 +1,4 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/duri/workspace/git/kabzanj.net/conf/application.conf,/home/duri/workspace/git/kabzanj.net/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/duri/workspace/git/kabzanj.net/conf/routes,/home/duri/workspace/git/kabzanj.net/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/home/duri/workspace/git/kabzanj.net/conf/logback.xml,/home/duri/workspace/git/kabzanj.net/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/duri/workspace/web/kabzanj.net/conf/application.conf,/home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/duri/workspace/web/kabzanj.net/conf/routes,/home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/duri/workspace/web/kabzanj.net/conf/logback.xml,/home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/logback.xml)[0m
