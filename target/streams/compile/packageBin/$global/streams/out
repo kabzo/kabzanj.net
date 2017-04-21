@@ -128,6 +128,8 @@
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/controllers/javascript/ReverseWebJarAssets.class[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7.class[0m
+[0m[[0mdebug[0m] [0m	views/html/projects/driverless_formula$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/driverless_formula$.class[0m
 [0m[[0mdebug[0m] [0m	views/html/projects/quadcopter$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/quadcopter$.class[0m
 [0m[[0mdebug[0m] [0m	controllers[0m
@@ -144,6 +146,8 @@
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/tabs[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class[0m
+[0m[[0mdebug[0m] [0m	views/html/projects/driverless_formula_Scope0$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/driverless_formula_Scope0$.class[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript/ReverseAssets.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/controllers/javascript/ReverseAssets.class[0m
 [0m[[0mdebug[0m] [0m	controllers/routes.class[0m
@@ -172,6 +176,8 @@
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/mapping.class[0m
 [0m[[0mdebug[0m] [0m	views/html/projects/viennacl_Scope0$viennacl.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/viennacl_Scope0$viennacl.class[0m
+[0m[[0mdebug[0m] [0m	views/html/projects/driverless_formula_Scope0.class[0m
+[0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/driverless_formula_Scope0.class[0m
 [0m[[0mdebug[0m] [0m	views/html/tabs/home_Scope0$home$$anonfun$apply$2$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/tabs/home_Scope0$home$$anonfun$apply$2$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	views/html/projects/projects_Scope0$projects$$anonfun$f$1.class[0m
@@ -230,6 +236,8 @@
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/catapult_Scope0$.class[0m
 [0m[[0mdebug[0m] [0m	views/html/main_page$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/main_page$.class[0m
+[0m[[0mdebug[0m] [0m	views/html/projects/driverless_formula_Scope0$driverless_formula$$anonfun$f$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/driverless_formula_Scope0$driverless_formula$$anonfun$f$1.class[0m
 [0m[[0mdebug[0m] [0m	views/html/projects/catapult_Scope0.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/catapult_Scope0.class[0m
 [0m[[0mdebug[0m] [0m	views/html/projects/projects.class[0m
@@ -304,6 +312,8 @@
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/projects_Scope0$projects.class[0m
 [0m[[0mdebug[0m] [0m	views/html/tabs/about_me$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/tabs/about_me$.class[0m
+[0m[[0mdebug[0m] [0m	views/html/projects/driverless_formula_Scope0$driverless_formula.class[0m
+[0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/driverless_formula_Scope0$driverless_formula.class[0m
 [0m[[0mdebug[0m] [0m	META-INF/resources/webjars/www-kabzanj-net/1.0-SNAPSHOT/images_sys/qt.png[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/public/images_sys/qt.png[0m
 [0m[[0mdebug[0m] [0m	META-INF/resources/webjars/www-kabzanj-net/1.0-SNAPSHOT/images_sys/simulink.png[0m
@@ -320,6 +330,8 @@
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/router[0m
 [0m[[0mdebug[0m] [0m	router/RoutesPrefix$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/router/RoutesPrefix$.class[0m
+[0m[[0mdebug[0m] [0m	views/html/projects/driverless_formula.class[0m
+[0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/views/html/projects/driverless_formula.class[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$4.class[0m
 [0m[[0mdebug[0m] [0m	  /home/duri/workspace/web/kabzanj.net/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$4.class[0m
 [0m[[0mdebug[0m] [0m	controllers/ReverseAssets.class[0m

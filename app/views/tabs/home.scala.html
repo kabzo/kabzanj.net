@@ -3,15 +3,15 @@
 
 @if(pictures!=null) {
 
-    <section id="intro">
+    <!-- <section id="intro"> -->
     <ul class="bxslider">
     @for((name, id) <- pictures) {
         <li>
-            <a href="@routes.Application.menu_id(id)"><img src="@routes.Application.imageAt(name)"  title="@id.replace('_', ' ').split(' ').map(_.capitalize).mkString(" ")" /></a>
+            <img src="@routes.Application.imageAt(name)"  title="@id.replace('_', ' ').split(' ').map(_.capitalize).mkString(" ")" />
         </li>
     }
     </ul>
-    </section>
+    <!-- </section> -->
 
 }
 
@@ -31,15 +31,16 @@
                     </div>
                     <div class="sub-heading">
                         <p>
-                           Currently at ETH Zurich studying MSc Robitcs, Systems nd Control
+                           Acquiring MSc Robotics, System and Control at ETH Zürich
                         </p>
                     </div>
            
                         <p><b>My strongest interests</b>
                             <ul>
-                                <li><b>Control Systems</b></li>
+                                <li><b>Control designes pushed to the limits</b></li>
                                 <li><b>Optimization</b></li>
-                                <li>Fitness and Basketball</li>
+                                <li><b>Machine Learning </b></li>
+                                <li>Fitness, basketball and cooking</li>
                             </ul>
                         </p>
 
@@ -64,10 +65,20 @@
             </div>
             <ul>
             	<li><b>Swiss Federal Institute of Technology in Zurich (ETH)</b>: MSc Robotics, System and Control
+                <ul>
+                <li>Knowledge Acquired:
+                <ul>
+                <li>Control Systems, Distributed Control, Nonlinear Control, MIMO Control, Optimal Control</li>
+                <li>Dynamic Programming</li>
+                <li>Model Predictive Control, Optimization </li>
+                <li>Machine Learning (supervised/unsupervised learning)</li>
+                <li> C++ algorithm optimization </li>
+                </ul></li>
+                </ul>
             	</li>
                 <li><b>Swiss Federal Institute of Technology in Zurich (ETH)</b>: B.S. in Electrical Engineering and Information Technology
                     <ul>
-                        <li>Exchange Program</li>
+                        <li>Exchange Program, where I focused more on sensing biological functions (Neuron action potential)</li>
                     </ul>
                 </li>
                 <li><b>Vienna University of Technology</b>: B.S. in Electrical Engineering and Information Technology
@@ -89,8 +100,10 @@
                 </div>
             </div>
             <ul>
-                <li>Part of <a href="http://driverless.amzracing.ch/"> <b>AMZ Driverless</b> (2016/2017)</a> 
-                    <ul> I am working on Path Planning and helping in Controls</ul>
+                <li>Part of <a href="http://driverless.amzracing.ch/"> <b>AMZ Driverless</b> (2016/2017)</a>
+                    <ul>
+                        <li> I am working on <b>Path Planning</b> and helping in control system</li>
+                    </ul>
                 </li>
 
                 <li><b>Software Developer</b> at the <b>Institute for Microelectronics TU WIEN</b>(2014)
@@ -120,6 +133,7 @@
                 </div>
             </div>
             <ul>
+                <li>currently taking Underactuated Robots at edX</li>
                 <li>edX Honor Code Certificate for <b>Autonomous Navigation for Flying Robots</b></li>
                 <li> IELTS Band 7 </li>
             </ul>
@@ -153,13 +167,14 @@
                 <tr>
                     <td class="vertical-center"><h4>Languages</h4></td>
                     <td><a href="http://www.cplusplus.com" target="_blank"> <img src="@routes.Assets.versioned("images_sys/cplusplus.png")"></a>
+                    <a href="https://www.python.org/" target="_blank">    <img src="@routes.Assets.versioned("images_sys/python.png")"></a>
                         <a href="http://www.maplesoft.com/products/Maple/" target="_blank"><img src="@routes.Assets.versioned("images_sys/maple.png")"></a>
                         <a href="http://www.java.com" target="_blank"><img src="@routes.Assets.versioned("images_sys/java.png")"></a>
                         <a href="http://www.matlab.com" target="_blank"><img src="@routes.Assets.versioned("images_sys/matlab.png")"></a>
                         <a href="http://www.mathworks.com/products/simulink/" target="_blank"><img src="@routes.Assets.versioned("images_sys/simulink.png")"></a>
                     </td>
                     <td>
-                        <a href="https://www.python.org/" target="_blank">    <img src="@routes.Assets.versioned("images_sys/python.png")"></a>
+                        
                     </td>
                 </tr>
                 <tr>

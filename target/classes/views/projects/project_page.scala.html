@@ -1,0 +1,69 @@
+@(currentPage: ProjectPage)
+
+
+
+<div class="container">
+    <div class="row spacer">
+        <div class="col-lg-6">
+            @currentPage.getContentHtml()
+            <div class="row">
+                @if(currentPage.getGithub_link() != null) {
+                    <div class="col-sm-2 text-center">
+                        GitHub
+                        <a href="@currentPage.getGithub_link()" target="_blank">
+                            <i class="fa fa-github fa-5x"></i>
+                        </a>
+                    </div>
+                }
+                @if(currentPage.getUrl() != null) {
+                        <div class="col-sm-2 text-center">
+                        Document
+                        <a href="@routes.Application.menu_string(currentPage.getName())" target="_blank">
+                            <i class="fa fa-file-pdf-o fa-5x"></i>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+            <div id=" project_page">
+            <div class="row spacer">
+            @if(currentPage.getPictures().size != 0 && currentPage.getPictures().size > 1) {
+                    <!-- Slider -->
+                <ul class="bxslider">
+                @for(p <- currentPage.getPictures()) {
+                    <li>
+                        <img src="@routes.Application.imageAt("images_tab/" + currentPage.getName() + "/" + p)" alt="" />
+                    </li>
+                }
+                </ul>
+
+                    <!-- end slider -->
+            } else {
+                @if(currentPage.getPictures().size != 0) {
+                    <div class="text-center">
+                        <img class="fit-image" src="@routes.Application.imageAt("images_tab/" + currentPage.getName() + "/" + currentPage.getPictures()(0))" alt="" />
+                    </div>
+                }
+            }
+            </div>
+            </div>
+            @if(currentPage.getVideo_url() != null) {
+                <div class="row">
+                    <div class="embed-container">
+                        <iframe class="embed-responsive-item" src=@currentPage.getVideo_url() frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            }
+
+                @if(currentPage.getPrezi() != null) {
+                    <div class="row">
+                    <iframe src="@currentPage.getPrezi()&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI0dDR3Ri8xN21kdmJNUjRQTW9BVThTV1lBPT0&amp;landing_sign=FvlXTmDLk6v5PK8ZRfC03iDOBlB-6iam_r1oc_zuP7Q" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" width="550" frameborder="0" height="400"></iframe>
+                    </div>
+                }
+
+        </div>
+    </div>
+</div>
+

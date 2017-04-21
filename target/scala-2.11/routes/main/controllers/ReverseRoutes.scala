@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/duri/workspace/web/kabzanj.net/conf/routes
-// @DATE:Mon Nov 28 13:02:34 CET 2016
+// @DATE:Sun Mar 19 23:52:15 CET 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }

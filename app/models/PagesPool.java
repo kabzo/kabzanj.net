@@ -9,7 +9,7 @@ import play.api.Application;
 import play.api.Play;
 import play.Logger;
 import views.html.projects.*;
-
+//
 import views.html.tabs.home;
 
 import java.io.File;
@@ -41,11 +41,20 @@ public class PagesPool {
         tabPages.add(new TabPage("home",home.render(null,null),"Juraj Kabzan, student of Electrical Engineering at ETH Zurich. On this page you can get to know more about me and my experiences."));
          tabPages.add(new TabPage("projects",new ArrayList<SubPage>(){{
 
+
+                    add(new ProjectPage("driverless_formula",
+                             driverless_formula.render(),
+                             "https://www.youtube.com/embed/OSMDiGV0GAI",
+                             null,
+                             null,
+                             null,
+                             "something"));
+
                      add(new ProjectPage("object_follow",
                              object_following.render(),
                              "https://www.youtube.com/embed/4itE-V_eS4A",
                              "https://github.com/kabzo/Object-Track-and-Follow",
-                             "https://owncloud.kabzanj.net/index.php/s/72EGZGtNixAd17P/download",
+                             null,
                              "https://prezi.com/embed/bsltpbiif1sv/?bgcolor=ffffff",
                              "Drone tracking object autonomously, video tracking with TLD, just initialization necessary," +
                                      "An On-Drone Dynamic Object Track and Follow Solution for Quadcopters"));
@@ -101,12 +110,16 @@ public class PagesPool {
     static private Map<String,String> getAllPictures(List<TabPage> tabPages){
         Map<String,String> pictures_map = new HashMap<String, String>();
         try {
-            List<File> filesInFolder= Files.walk(Paths.get(Play.current().path().toString()+"/images_tab/"))
+            List<File> filesInFolder= Files.walk(Paths.get(Play.current().path().toString()+"/images_tab/main_pictures/"))
                     .filter(Files::isRegularFile)
                     .map(Path::toFile)
                     .collect(Collectors.toList());
             for(File f:filesInFolder){
-                pictures_map.put(f.getPath(), f.getParentFile().getName());
+                if(f.getParentFile().getName().contains("formula")){
+                    pictures_map.put(f.getPath(), "driverless_formula_(c)_Kreuzweise");
+                }else{
+                    pictures_map.put(f.getPath(), f.getParentFile().getName());
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,0 +1,105 @@
+@(currentPage: TabPage, tabPages: List[TabPage], webJarAssets: WebJarAssets)
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="google-site-verification" content="XfEIOj2EM0U2u4VG2DNWL46iKcLUzyUyEv_T0_xAPss" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="@currentPage.getMetaTag()">
+        <title>@currentPage.getShowName()</title>
+
+    </head>
+
+    <header>
+
+
+        <link href="@routes.Assets.versioned("css/default_colors.css")" rel="stylesheet" />
+        <link href="@routes.Assets.versioned("css/main_style.css")" rel="stylesheet" />
+        <link href="@routes.Assets.versioned("css/scrollin-nav.css")" rel="stylesheet" />
+
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(webJarAssets.locate("css/bootstrap.min.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(webJarAssets.locate("dist/jquery.bxslider.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(webJarAssets.locate("font-awesome.min.css"))'>
+
+        <div class="navbar navbar-default navbar-fixed-top" id="top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@routes.Application.menu_id("home")"><span>Juraj</span> Kabzan</a>
+                </div>
+                <div class="navigation">
+
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                    @for(p <- tabPages) {
+                        @if(p.getSubPages().size == 0) {
+                            @if(currentPage.getName()=="home"){
+                        <li><a class="page-scroll"  href="#about_me">About Me</a></li>
+
+                        }
+                            <li><a href="@routes.Application.menu_id(p.getName())">@p.getShowName()</a></li>
+                        } else {
+                            <li class="dropdown ">
+                                <a href="@routes.Application.menu_id(p.getName())" data-hover="dropdown" data-delay="0" data-close-others="false">@p.getShowName() <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                @for(s <- p.getSubPages()) {
+                                    <li><a href="@routes.Application.menu_id(s.getName())">@s.getShowName()</a></li>
+                                }
+                                </ul>
+                            </li>
+                        }
+                    }
+                    </ul>
+                </div>
+                    </div>
+            </div>
+        </div>
+
+        @*<link rel="icon" type="image/png" href="@routes.Assets.versioned("images_sys/"+currentPage.getName()+".png")" />*@
+        <link rel="icon" type="image/png" href="@routes.Assets.versioned("/images_sys/eth.png")" />
+
+    </header>
+
+    <body>
+        @currentPage.getContentHtml()
+        <a href="#" class="back-to-top">Back to Top</a>
+    </body>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h4 class="widgetheading" style="color:#fff !important;">Get in touch with me</h4>
+                        <address>
+                            <b>Juraj Kabzan</b><br>
+                            <b><i class="fa fa-home"></i></b> Schweiz, Zurich<br>
+                            <b><i class="fa fa-envelope"></i></b><a href="mailto:kabzanj@@gmail.com" style="color: #FFFFFF !important"> kabzanj&#064gmail.com</a><br>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <!-- JavaScript -->
+    <script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("2.2.2/jquery.min.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("js/bootstrap.min.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("jquery.bxslider.min.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("jquery.easing.min.js"))'></script>
+
+    <script type="text/javascript" src="@routes.Assets.versioned("js/scrolling-nav.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.versioned("js/custom.js")"></script>
+
+
+    <script type="text/javascript">
+    </script>
+
+</html>

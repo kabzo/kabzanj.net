@@ -58,7 +58,7 @@ Seq[Any](format.raw/*1.5*/("""<section id="content">
 object contact extends contact_Scope0.contact
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 28 21:52:04 CET 2017
+                  DATE: Sun Mar 19 23:52:16 CET 2017
                   SOURCE: /home/duri/workspace/web/kabzanj.net/app/views/tabs/contact.scala.html
                   HASH: 60613b5c631ea6720b4f2b9a891d7d6c516ffb93
                   MATRIX: 836->4|1150->292|1164->298|1243->357

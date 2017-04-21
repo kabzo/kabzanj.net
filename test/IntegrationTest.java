@@ -1,8 +1,8 @@
-import org.junit.*;
+//import org.junit.*;
 import play.libs.F.Callback;
 import play.test.TestBrowser;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 import static play.test.Helpers.*;
 
 public class IntegrationTest {

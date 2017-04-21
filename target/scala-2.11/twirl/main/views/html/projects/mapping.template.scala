@@ -68,7 +68,7 @@ gmapping provides the map and the localization.
 object mapping extends mapping_Scope0.mapping
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 28 21:52:04 CET 2017
+                  DATE: Sun Mar 19 23:52:16 CET 2017
                   SOURCE: /home/duri/workspace/web/kabzanj.net/app/views/projects/mapping.scala.html
                   HASH: 85af745b000fe0705bd5d4a398eeca3114f82270
                   MATRIX: 840->0
